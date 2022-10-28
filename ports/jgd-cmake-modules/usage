@@ -1,0 +1,8 @@
+The package jgd-cmake-modules provides CMake modules:
+
+    find_package(jgd-cmake-modules REQUIRED CONFIG)
+    include(JcmAllModules)   # include all modules
+    include(JcmSetupProject) # OR include specific modules
+    jcm_setup_project()      # use modules
+
+For more information, see https://github.com/jgd-solutions/jgd-cmake-modules

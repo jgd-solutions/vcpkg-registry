@@ -1,0 +1,17 @@
+{
+  "name": "jgd-cmake-modules",
+  "version": "2.2.0",
+  "port-version": 0,
+  "description": "CMake library for standardized CMake projects for JGD",
+  "homepage": "https://github.com/jgd-solutions/jgd-cmake-modules",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
