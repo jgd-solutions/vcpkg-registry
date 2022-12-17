@@ -2,7 +2,7 @@
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
     URL git@github.com:jgd-solutions/jgd-cmake-modules.git
-    REF 779104511f44d58ce1a81fec0a7410c739523f18
+    REF cf4a6e6207f0112cc6967d83f706d7d259fb6b14
     HEAD_REF main)
 
 file(READ "${CMAKE_CURRENT_LIST_DIR}/vcpkg.json" manifest)
