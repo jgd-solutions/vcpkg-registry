@@ -1,15 +1,15 @@
-# directly from git instead of GH archives with vcpkg_from_github because repo is private
-vcpkg_from_git(
+vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    URL git@github.com:jgd-solutions/jgd-cmake-modules.git
-    REF cf4a6e6207f0112cc6967d83f706d7d259fb6b14
+    REPO jgd-solutions/jgd-cmake-modules
+    REF ad6475ef30462e8cf3d6f747bad35ae97e79d407
+    SHA512 18f5539f2e4dcce932afc03cfda30d7f23e16502160f01156b440d06ad03f750b90d6e625dc53138d9b24e42b3d51fa8d15230f498573594d164f9d8797acd0a
     HEAD_REF main)
 
 file(READ "${CMAKE_CURRENT_LIST_DIR}/vcpkg.json" manifest)
 string(JSON version ERROR_VARIABLE error GET "${manifest}" "version")
-if (error)
+if(error)
   message(FATAL_ERROR "Failed to read version from manifest file: ${error}")
-endif ()
+endif()
 
 vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"
@@ -19,8 +19,8 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(CONFIG_PATH "share/cmake/${PORT}-${version}")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug")
-file(COPY "${CURRENT_PORT_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.md")
 
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug")
+file(COPY "${CURRENT_PORT_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
 set(VCPKG_POLICY_EMPTY_INCLUDE_FOLDER enabled)
