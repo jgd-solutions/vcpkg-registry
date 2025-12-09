@@ -1,7 +1,7 @@
 {
   "default": {
     "jgd-cmake-modules": {
-      "baseline": "2.4.0",
+      "baseline": "3.10.1",
       "port-version": 0
     }
   }
